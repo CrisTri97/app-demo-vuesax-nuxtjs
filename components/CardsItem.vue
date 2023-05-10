@@ -1,13 +1,13 @@
 <template>
   <vs-card type="2">
     <template #title>
-      <h3>Pot with a plant</h3>
+      <h3>{{ user.name }}</h3>
     </template>
     <template #img>
       <img src="https://vuesax.com/foto6.png" alt="" />
     </template>
     <template #text>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+      <p>{{ user.email }}</p>
     </template>
     <template #interactions>
       <vs-button danger icon>
@@ -22,13 +22,26 @@
 </template>
 
 <script>
-export default {};
+export default {}
 </script>
 
-<script>
+<script lang="ts">
+interface User {
+  id: number
+  name: string
+  username: string
+  email: string
+  website: string
+}
+import { PropType } from 'vue'
 /* ✓ GOOD */
 export default {
   name: 'CardsItem',
-  // ...
+  props: {
+    user: {
+      type: Object as PropType<User>,
+      required: true,
+    },
+  },
 }
 </script>

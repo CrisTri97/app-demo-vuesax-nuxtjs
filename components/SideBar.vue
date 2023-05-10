@@ -16,7 +16,7 @@
         <template #icon>
           <i class="bx bxs-shopping-bags"></i>
         </template>
-        <NuxtLink to="/addproduct">
+        <NuxtLink to="/addUser">
           Add product
         </NuxtLink>
       </vs-sidebar-item>
